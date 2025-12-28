@@ -1,0 +1,12 @@
+[project]
+name = "gd-arabic"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "camel-tools>=1.5.7",
+]
+
+[project.scripts]
+gd-arabic = "gd_arabic:main"
