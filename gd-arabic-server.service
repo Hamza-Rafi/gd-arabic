@@ -1,0 +1,12 @@
+[Unit]
+Description=Arabic root extractor
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=/home/hamza/dev/gd-arabic/gd_arabic_server.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

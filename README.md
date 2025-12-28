@@ -15,7 +15,12 @@ paru -S cmake boost
 ```bash
 git clone https://git.hamzarafi.com/Hamza-Rafi/gd-arabic.git
 cd gd-arabic
-uv tool install . --python 3.10
+```
+
+Make the client script executable:
+
+```bash
+chmod +x ./gd_arabic_client.py
 ```
 
 ## GoldenDict-NG Setup
@@ -26,20 +31,23 @@ uv tool install . --python 3.10
    - **Enabled**: ✓
    - **Type**: html
    - **Name**: gd-arabic
-   - **Command Line**: `gd-arabic %GDWORD% %GDSEARCH%`
-
-> **Troubleshooting:** If you get a `Query error: exit code 255`, GoldenDict-NG can't find the command. Use the full path instead:
->
-> ```
-> /home/$USER/.local/bin/gd-arabic %GDWORD% %GDSEARCH%
-> ```
+   - **Command Line**: `/home/path/to/gd_arabic_client.py %GDWORD% %GDSEARCH%`
 
 ## Usage
+
+Ensure the server is running beforehand:
+
+```
+ln -s /home/path/to/gd-arabic/gd-arabic-server.service ~/.config/systemd/user/
+systemctl --user daemon-reload
+systemctl --user enable gd-arabic-server.service
+systemctl --user start gd-arabic-server.service
+```
 
 The script accepts two args:
 
 ```bash
-gd-arabic <word> [sentence]
+./gd_arabic_client.py <word> [sentence]
 ```
 
 - `word` - the word to highlight
