@@ -9,4 +9,4 @@ dependencies = [
 ]
 
 [project.scripts]
-gd-arabic = "gd_arabic:main"
+gd-arabic-client = "gd_arabic_client:main"
